@@ -30,30 +30,29 @@ Commit messages must follow the Conventional Commits specification: https://www.
 
 ## Commit Types
 
-| Type      | Description                                                                 |
-| --------- | --------------------------------------------------------------------------- |
-| `feat`    | A new feature                                                              |
-| `fix`     | A bug fix                                                                  |
-| `docs`    | Documentation only changes                                                 |
-| `style`   | Code style changes (formatting, semi-colons, etc.) - no code logic change  |
-| `refactor`| Code changes that neither fix a bug nor add a feature                      |
-| `perf`    | Performance improvements                                                    |
-| `test`    | Adding or updating tests                                                   |
-| `build`   | Build system or external dependencies changes                              |
-| `ci`      | CI configuration changes and scripts                                       |
-| `chore`   | Other changes that don't modify src or test files                          |
-| `revert`  | Reverts a previous commit                                                  |
+| Type       | Description                                                                |
+| ---------- | -------------------------------------------------------------------------- |
+| `feat`     | A new feature                                                              |
+| `fix`      | A bug fix                                                                  |
+| `docs`     | Documentation only changes                                                 |
+| `style`    | Code style changes (formatting, semi-colons, etc.) — no logic change      |
+| `refactor` | Code changes that neither fix a bug nor add a feature                      |
+| `perf`     | Performance improvements                                                    |
+| `test`     | Adding or updating tests                                                   |
+| `build`    | Build system or external dependency changes                                |
+| `ci`       | CI configuration changes and scripts                                       |
+| `chore`    | Other changes that don't modify src or test files                          |
+| `revert`   | Reverts a previous commit                                                  |
 
 ## Format Rules
 
 ### Header
 
 - **Format:** `<type>[optional scope]: <description>`
-- **Description rules:**
-  - Must be in imperative, present tense (e.g., "add feature" not "added feature" or "adds feature")
-  - No capitalization at the start
-  - No period at the end
-  - Keep concise (typically under 50 characters total)
+- Description must be in imperative, present tense (e.g., "add feature" not "added feature")
+- No capitalization at the start
+- No period at the end
+- Keep concise (typically under 50 characters total)
 
 ```
 feat: add dark mode toggle
@@ -63,10 +62,18 @@ feat(auth): upgrade OAuth client library
 
 ### Body
 
+Include a body when:
+
+- The change touches multiple files or areas
+- The *why* behind the change is not obvious from the header
+- The change is a breaking, risky, or non-trivial refactor
+- A reviewer would need context to understand the intent
+
+Skip the body when the header alone is self-explanatory (e.g., `fix: correct typo in README`).
+
 - Bulleted list detailing each specific change or requirement
 - Provide context on *what* and *why*, not just *how*
-- Every detail from the intent should be captured as a bullet point
-- Each bullet point should also be in imperative mood
+- Each bullet point should be in imperative mood
 - Wrap at 72 characters
 
 ```
@@ -79,9 +86,9 @@ feat(ui): add dark mode toggle to header
 
 ### Footer
 
-- Use for breaking changes and issues references
-- Breaking changes MUST be in the footer and start with `BREAKING CHANGE: `
-- May reference issues using a format like `Closes #123` or `Related to #456`
+- Use for breaking changes and issue references
+- Breaking changes MUST start with `BREAKING CHANGE: `
+- Reference issues using `Closes #123` or `Related to #456`
 
 ```
 feat(api): change return type
@@ -93,8 +100,7 @@ Closes #123
 
 ## Scope
 
-- Optional part of the commit header
-- Enclosed in parentheses after the type
+- Optional — enclosed in parentheses after the type
 - Identifies the part of the codebase affected
 - Examples: `auth`, `ui`, `api`, `database`, `docs`
 
@@ -161,43 +167,37 @@ refactor(database): replace ORM with raw SQL queries
 
 ## Common Mistakes to Avoid
 
-### ❌ Wrong tense
+### Wrong tense
 
 ```
+# Bad
 feat: added dark mode
 feat: adds dark mode
-```
 
-### ✅ Correct
-
-```
+# Good
 feat: add dark mode
 ```
 
-### ❌ Capitalization or period in header
+### Capitalization or period in header
 
 ```
+# Bad
 feat: Add dark mode toggle.
 feat(add dark mode toggle)
-```
 
-### ✅ Correct
-
-```
+# Good
 feat: add dark mode toggle
 ```
 
-### ❌ Missing context in body
+### Missing context in body
 
 ```
+# Bad
 fix: remove overlay
 
 - fix z-index
-```
 
-### ✅ Correct
-
-```
+# Good
 fix: remove blocking overlay on login button
 
 - adjust z-index of the overlay div to sit behind the button
@@ -206,19 +206,19 @@ fix: remove blocking overlay on login button
 
 ## Quick Reference
 
-| Type    | Template                                                      |
-| ------- | ------------------------------------------------------------- |
-| feat    | `feat: <short description>`                                  |
-| fix     | `fix: <short description>`                                   |
-| docs    | `docs: <short description>`                                  |
-| style   | `style: <short description>`                                 |
-| refactor| `refactor: <short description>`                              |
-| perf    | `perf: <short description>`                                  |
-| test    | `test: <short description>`                                  |
-| build   | `build: <short description>`                                 |
-| ci      | `ci: <short description>`                                    |
-| chore   | `chore: <short description>`                                 |
-| revert  | `revert: <original commit message>`                          |
+| Type       | Template                              |
+| ---------- | ------------------------------------- |
+| `feat`     | `feat: <short description>`           |
+| `fix`      | `fix: <short description>`            |
+| `docs`     | `docs: <short description>`           |
+| `style`    | `style: <short description>`          |
+| `refactor` | `refactor: <short description>`       |
+| `perf`     | `perf: <short description>`           |
+| `test`     | `test: <short description>`           |
+| `build`    | `build: <short description>`          |
+| `ci`       | `ci: <short description>`             |
+| `chore`    | `chore: <short description>`          |
+| `revert`   | `revert: <original commit message>`   |
 
 ---
 
