@@ -1,3 +1,6 @@
+import { AnnouncementBar } from '@/components/layout/announcement-bar';
+import { Navbar } from '@/components/layout/navbar';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -5,6 +8,10 @@ export default function RootLayout({
 }>) {
   return (
     <div className="min-h-svh flex flex-col">
+      <header>
+        <AnnouncementBar />
+        <Navbar />
+      </header>
       <main className="flex-1 container">
         {children}
       </main>
