@@ -8,7 +8,7 @@ export default function RootLayout({
 }>) {
   return (
     <div className="min-h-svh flex flex-col">
-      <header>
+      <header className="relative w-full">
         <AnnouncementBar />
         <Navbar />
       </header>

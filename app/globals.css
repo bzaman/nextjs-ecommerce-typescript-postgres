@@ -46,6 +46,19 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+
+
+  --color-primary-50:  oklch(from var(--primary) 0.97 calc(c * 0.3) h);
+  --color-primary-100: oklch(from var(--primary) 0.94 calc(c * 0.4) h);
+  --color-primary-200: oklch(from var(--primary) 0.87 calc(c * 0.6) h);
+  --color-primary-300: oklch(from var(--primary) 0.78 calc(c * 0.75) h);
+  --color-primary-400: oklch(from var(--primary) 0.68 calc(c * 0.9) h);
+  --color-primary-500: oklch(from var(--primary) 0.58 c h);
+  --color-primary-600: var(--primary); /* 0.5292 — your base */
+  --color-primary-700: oklch(from var(--primary) 0.45 c h);
+  --color-primary-800: oklch(from var(--primary) 0.37 calc(c * 0.95) h);
+  --color-primary-900: oklch(from var(--primary) 0.28 calc(c * 0.85) h);
+  --color-primary-950: oklch(from var(--primary) 0.18 calc(c * 0.7) h);
 }
 
 :root {
@@ -55,7 +68,8 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  /* --primary: oklch(0.205 0 0); */
+  --primary: oklch(0.5292 0.2326 282.81);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -84,7 +98,8 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  /* --background: oklch(0.145 0 0); */
+  --background: oklch(0.23 .034 264.665);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
