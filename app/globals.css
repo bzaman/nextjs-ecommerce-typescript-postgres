@@ -148,7 +148,7 @@
 
 @layer utilities {
   .container {
-    @apply max-w-7xl lg:mx-auto p-5 md:px-10 w-full;
+    @apply w-full max-w-7xl mx-auto px-4;
   }
 
   .flex-start {

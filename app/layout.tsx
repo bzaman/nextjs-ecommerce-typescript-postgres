@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/layout/theme-provider";
 
-const inter = Inter({subsets:['latin'], variable:'--font-sans'});
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 import { APP_NAME, APP_DESC, SERVER_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -14,10 +14,12 @@ export const metadata: Metadata = {
   },
   description: APP_DESC,
   metadataBase: new URL(SERVER_URL),
-  authors: [{
-    name: "Badiuzzaman",
-    url: "https://www.upwork.com/freelancers/~01dc1a347430f5ff7c",
-  }],
+  authors: [
+    {
+      name: "Badiuzzaman",
+      url: "https://www.upwork.com/freelancers/~01dc1a347430f5ff7c",
+    },
+  ],
 };
 
 export default function RootLayout({

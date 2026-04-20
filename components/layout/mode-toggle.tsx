@@ -2,7 +2,9 @@
 
 import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
-import { Moon, Sun } from 'lucide-react';
+
+import IcoMoon from "@/components/icons/icon-moon";
+import IcoSun from "@/components/icons/icon-sun";
 
 export function ModeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
@@ -13,9 +15,12 @@ export function ModeToggle() {
       size="icon"
       aria-label="Toggle dark mode"
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+      className="cursor-pointer"
     >
-      <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+      <IcoSun className="pointer-events-auto rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+      <IcoMoon className="pointer-events-auto absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
     </Button>
   );
 }
+
+
