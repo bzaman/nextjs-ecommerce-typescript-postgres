@@ -1,10 +1,12 @@
 import "@/app/globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Open_Sans, Bebas_Neue } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const headingTypeface = Bebas_Neue({ weight: '400', subsets: ["latin"], variable: "--heading-typeface" });
+const bodyTypeface = Open_Sans({ subsets: ["latin"], variable: "--body-typeface" });
+
 import { APP_NAME, APP_DESC, SERVER_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -30,10 +32,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", "font-sans", inter.variable)}
+      className={cn("h-full", "antialiased", bodyTypeface.variable, headingTypeface.variable)}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">
+      <body className="font-sans-serif min-h-full flex flex-col text-base">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

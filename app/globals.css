@@ -7,9 +7,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
+  --font-body-text: var(--body-typeface);
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+  --font-heading: var(--heading-typeface);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -48,13 +48,14 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 
 
-  --color-primary-50:  oklch(from var(--primary) 0.97 calc(c * 0.3) h);
+  --color-primary-50: oklch(from var(--primary) 0.97 calc(c * 0.3) h);
   --color-primary-100: oklch(from var(--primary) 0.94 calc(c * 0.4) h);
   --color-primary-200: oklch(from var(--primary) 0.87 calc(c * 0.6) h);
   --color-primary-300: oklch(from var(--primary) 0.78 calc(c * 0.75) h);
   --color-primary-400: oklch(from var(--primary) 0.68 calc(c * 0.9) h);
   --color-primary-500: oklch(from var(--primary) 0.58 c h);
-  --color-primary-600: var(--primary); /* 0.5292 — your base */
+  --color-primary-600: var(--primary);
+  /* 0.5292 — your base */
   --color-primary-700: oklch(from var(--primary) 0.45 c h);
   --color-primary-800: oklch(from var(--primary) 0.37 calc(c * 0.95) h);
   --color-primary-900: oklch(from var(--primary) 0.28 calc(c * 0.85) h);
@@ -63,7 +64,7 @@
 
 :root {
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --foreground: oklch(0.2954 0.0145 279.83);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -100,7 +101,7 @@
 .dark {
   /* --background: oklch(0.145 0 0); */
   --background: oklch(0.23 .034 264.665);
-  --foreground: oklch(0.985 0 0);
+  --foreground: oklch(0.9754 0.0145 279.83);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
@@ -138,7 +139,7 @@
   }
 
   html {
-    @apply font-sans;
+    @apply font-body-text;
   }
 
   body {
@@ -151,15 +152,25 @@
     @apply w-full max-w-7xl mx-auto px-4;
   }
 
-  .flex-start {
-    @apply flex justify-start items-center;
+  :where(body, p, h1, h2, h3, h4, h5, h6) {
+    @apply text-foreground;
   }
 
-  .flex-center {
-    @apply flex justify-center items-center;
+  :where(h1, h2, h3, h4, h5, h6) {
+    font-family: var(--font-heading);
+    @apply font-normal;
   }
 
-  .flex-between {
-    @apply flex justify-between items-center;
+  :where(a) {
+    color: var(--primary);
+  }
+
+  :where(a:visited) {
+    color: var(--color-primary-700);
+  }
+
+  ::selection {
+    background-color: var(--color-primary-200);
+    color: var(--color-primary-900);
   }
 }
