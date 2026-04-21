@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { APP_NAME } from "@/lib/constants";
-import { ModeToggle } from "./mode-toggle";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 import { Button } from "@/components/ui/button";
 import LogoSvg from "@/components/ui/logo-svg";
 import IconUser from "@/components/icons/icon-user";
-import IconShoppingCart from "@/components/icons/shopping-cart";
+import IconShoppingCart from "@/components/icons/icon-shopping-cart";
 
 // const NAV_LINKS = [
 //   { href: "/", label: "Home" },
@@ -31,7 +31,7 @@ export function Navbar() {
               <IconUser size={20} /> Sign in
             </Link>
           </Button>
-          <ModeToggle />
+          <ThemeToggle />
         </div>
       </div>
     </nav>

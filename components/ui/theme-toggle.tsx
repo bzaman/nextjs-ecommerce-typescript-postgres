@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import IcoMoon from "@/components/icons/icon-moon";
 import IcoSun from "@/components/icons/icon-sun";
 
-export function ModeToggle() {
+export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
 
   return (
