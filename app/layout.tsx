@@ -35,7 +35,7 @@ export default function RootLayout({
       className={cn("h-full", "antialiased", bodyTypeface.variable, headingTypeface.variable)}
       suppressHydrationWarning
     >
-      <body className="font-sans-serif min-h-full flex flex-col text-base">
+      <body className="font-sans-serif min-h-svh text-base">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

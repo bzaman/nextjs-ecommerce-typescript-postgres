@@ -22,12 +22,12 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <Button asChild variant="ghost" title="cart">
-            <Link href="/cart">
+            <Link className="text-inherit" href="/cart">
               <IconShoppingCart size={20} /> Cart
             </Link>
           </Button>
           <Button asChild variant="ghost" title="sing-in">
-            <Link href="/sing-in">
+            <Link className="text-inherit" href="/sing-in">
               <IconUser size={20} /> Sign in
             </Link>
           </Button>
