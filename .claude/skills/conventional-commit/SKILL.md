@@ -165,6 +165,10 @@ refactor(database): replace ORM with raw SQL queries
 - update error handling for database operations
 ```
 
+## Rules
+
+- **Never** add `Co-Authored-By`, `Signed-off-by`, or any agent/AI authorship trailers to commit messages.
+
 ## Common Mistakes to Avoid
 
 ### Wrong tense

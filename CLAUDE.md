@@ -6,6 +6,6 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ## Skills
 
-@include .claude/skills/conventional-commit/SKILL.md
+<!-- @include .claude/skills/conventional-commit/SKILL.md -->
 @include .claude/skills/typescript-best-practices/SKILL.md
 @include .claude/skills/react-useeffect-avoid/SKILL.md
