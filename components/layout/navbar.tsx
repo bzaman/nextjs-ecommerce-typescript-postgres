@@ -3,22 +3,23 @@ import { APP_NAME } from "@/lib/constants";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 import { Button } from "@/components/ui/button";
-import LogoSvg from "@/components/ui/logo-svg";
+import LogoMark from "@/components/ui/logomark";
 import IconUser from "@/components/icons/icon-user";
 import IconShoppingCart from "@/components/icons/icon-shopping-cart";
+import IconMenu from "@/components/icons/icon-menu";
 
-// const NAV_LINKS = [
-//   { href: "/", label: "Home" },
-//   { href: "/products", label: "Shop" },
-// ];
 
 export function Navbar() {
   return (
     <nav className="w-full bg-primary-50/50 border-b">
       <div className="container flex items-center justify-between py-4">
-        <Link href="/" className="inline-block">
-          <LogoSvg title={APP_NAME} size={150} />
-        </Link>
+
+        <div className="flex items-center gap-3">
+          <div className="md:hidden">
+            <IconMenu size={40} />
+          </div>
+          <LogoMark title={APP_NAME} />
+        </div>
 
         <div className="flex items-center gap-3">
           <Button asChild variant="ghost" title="cart">

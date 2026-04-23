@@ -1,13 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { APP_NAME } from "@/lib/constants";
-import LogoSvg from "@/components/ui/logo-svg";
+import LogoMark from "@/components/ui/logomark";
 import Link from "next/link";
 
 export default function NotFound() {
   return (
     <div className="container min-h-svh flex flex-col items-center justify-center">
       <div className="mb-2">
-        <LogoSvg title={APP_NAME} size={150} />
+        <LogoMark title={APP_NAME} />
       </div>
 
       <div className="rounded-md shadow-md text-center p-6 w-full md:w-1/3">
