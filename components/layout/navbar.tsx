@@ -6,17 +6,16 @@ import { Button } from "@/components/ui/button";
 import LogoMark from "@/components/ui/logomark";
 import IconUser from "@/components/icons/icon-user";
 import IconShoppingCart from "@/components/icons/icon-shopping-cart";
-import IconMenu from "@/components/icons/icon-menu";
 
+import OffCanvasNav from "@/components/layout/off-canvas-nav";
 
 export function Navbar() {
   return (
     <nav className="w-full bg-primary-50/50 border-b">
       <div className="container flex items-center justify-between py-4">
-
-        <div className="flex items-center gap-3">
-          <div className="md:hidden">
-            <IconMenu size={40} />
+        <div className="flex items-center gap-2">
+          <div className="inline-flex items-center md:hidden">
+            <OffCanvasNav />
           </div>
           <LogoMark title={APP_NAME} />
         </div>

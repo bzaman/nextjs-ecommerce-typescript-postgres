@@ -1,4 +1,3 @@
-import { forwardRef } from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
@@ -15,10 +14,9 @@ interface LogoMarkProps {
   className?: string;
 }
 
-const LogoSvg = forwardRef<SVGSVGElement, LogoSvgProps>(
-  ({ size = 60, title, style, className, fill = "#6246EA", ...props }, ref) => (
+function LogoSvg({ size = 60, title, style, className, fill = "#6246EA", ...props }: LogoSvgProps) {
+  return (
     <svg
-      ref={ref}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 246 41"
       fill="none"
@@ -67,10 +65,8 @@ const LogoSvg = forwardRef<SVGSVGElement, LogoSvgProps>(
         className="lm-v"
       />
     </svg>
-  ),
-);
-
-LogoSvg.displayName = "LogoSvg";
+  );
+}
 
 export default function LogoMark({ size = 150, title, href = "/", className }: LogoMarkProps) {
   return (

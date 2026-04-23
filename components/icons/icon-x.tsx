@@ -8,10 +8,10 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
   strokeWidth?: number;
 }
 
-const IconMenu = forwardRef<SVGSVGElement, IconProps>(
+const IconX = forwardRef<SVGSVGElement, IconProps>(
   (
     {
-      size = 36,
+      size = 20,
       style,
       title,
       className,
@@ -23,25 +23,23 @@ const IconMenu = forwardRef<SVGSVGElement, IconProps>(
   ) => (
     <svg
       ref={ref}
-      viewBox="0 0 44 44"
+      viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
       strokeWidth={strokeWidth}
       strokeLinecap="round"
       strokeLinejoin="round"
-      className={cn("pointer-events-none svg-icon-menu", "size-(--icon-size)", className)}
+      className={cn("pointer-events-none", "size-(--icon-size)", className)}
       style={{ "--icon-size": `${size}px`, ...style } as React.CSSProperties}
       aria-hidden={ariaHidden}
       {...props}
     >
       {title && <title>{title}</title>}
-      <path d="M13 14.5H31" stroke="currentColor"></path>
-      <path d="M13 19.5H22.47" stroke="currentColor"></path>
-      <path d="M13 24.5H31" stroke="currentColor"></path>
-      <path d="M13 29.5H22.47" stroke="currentColor"></path>
+      <path d="M18 6 6 18" />
+      <path d="m6 6 12 12" />
     </svg>
   ),
 );
 
-IconMenu.displayName = "IconMenu";
-export default IconMenu;
+IconX.displayName = "IconX";
+export default IconX;

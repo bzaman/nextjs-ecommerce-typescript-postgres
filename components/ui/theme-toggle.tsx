@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 /**
  * WHY NOT useEffect FOR HYDRATION GUARDING
@@ -39,18 +39,23 @@
  * is stable across the SSR → hydration transition without any content jump.
  */
 
-import { useSyncExternalStore } from "react";
-import { useTheme } from 'next-themes';
-import { Button } from '@/components/ui/button';
+import { useTheme } from "next-themes";
+import { Button } from "@/components/ui/button";
+import { useIsClient } from "@/hooks/useIsClient";
 
 import IconMoon from "@/components/icons/icon-moon";
 import IconSun from "@/components/icons/icon-sun";
 
-const emptySubscribe = () => () => {};
+import { cn } from "@/lib/utils"
 
-export function ThemeToggle() {
+interface ThemeToggleProps {
+  showLabel?: boolean;
+  className?: string;
+}
+
+export function ThemeToggle({ showLabel = false, className }: ThemeToggleProps) {
   const { resolvedTheme, setTheme } = useTheme();
-  const isClient = useSyncExternalStore(emptySubscribe, () => true, () => false);
+  const isClient = useIsClient();
 
   // Return a placeholder with the exact same dimensions as the button <32px>
   if (!isClient) {
@@ -62,11 +67,14 @@ export function ThemeToggle() {
       variant="ghost"
       size="icon"
       aria-label="Toggle dark mode"
-      onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
-      className="cursor-pointer"
+      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+      className={cn("cursor-pointer", showLabel && "gap-2", className)}
     >
-      <IconSun className="pointer-events-auto rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <IconMoon className="pointer-events-auto absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+      <span className="block size-5 relative">
+        <IconSun className="pointer-events-auto rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+        <IconMoon className="pointer-events-auto absolute top-0 left-0 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+      </span>
+      {showLabel && (<span className="capitalize">{resolvedTheme}</span>)}
     </Button>
   );
 }
