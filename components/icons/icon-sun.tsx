@@ -8,7 +8,7 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
   strokeWidth?: number;
 }
 
-const IcoSun = forwardRef<SVGSVGElement, IconProps>(
+const IconSun = forwardRef<SVGSVGElement, IconProps>(
   (
     {
       size = 20,
@@ -59,5 +59,5 @@ const IcoSun = forwardRef<SVGSVGElement, IconProps>(
   ),
 );
 
-IcoSun.displayName = "IcoSun";
-export default IcoSun;
+IconSun.displayName = "IconSun";
+export default IconSun;

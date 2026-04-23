@@ -43,8 +43,8 @@ import { useSyncExternalStore } from "react";
 import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
 
-import IcoMoon from "@/components/icons/icon-moon";
-import IcoSun from "@/components/icons/icon-sun";
+import IconMoon from "@/components/icons/icon-moon";
+import IconSun from "@/components/icons/icon-sun";
 
 const emptySubscribe = () => () => {};
 
@@ -65,8 +65,8 @@ export function ThemeToggle() {
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
       className="cursor-pointer"
     >
-      <IcoSun className="pointer-events-auto rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <IcoMoon className="pointer-events-auto absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+      <IconSun className="pointer-events-auto rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+      <IconMoon className="pointer-events-auto absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
     </Button>
   );
 }
